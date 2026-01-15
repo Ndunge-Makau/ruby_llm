@@ -27,6 +27,7 @@ module RubyLLM
           text-embedding-005
           text-embedding-004
           text-multilingual-embedding-002
+          multimodalembedding
         ].freeze
 
         def list_models
