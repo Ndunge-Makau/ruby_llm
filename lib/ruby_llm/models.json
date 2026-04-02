@@ -59402,6 +59402,167 @@
     }
   },
   {
+    "id": "multimodalembedding",
+    "name": "multimodalembedding",
+    "provider": "vertexai",
+    "family": "multimodalembedding",
+    "created_at": null,
+    "context_window": 32,
+    "max_output_tokens": 1048,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "embeddings"
+      ]
+    },
+    "capabilities": [
+      "streaming"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.2
+        }
+      },
+      "images": {
+        "standard": {
+          "input": 0.0001
+        }
+      }
+    },
+    "metadata": {
+      "source": "known_models",
+      "model_type": "embedding",
+      "modality_limits": {
+        "text": {
+          "max_tokens": 32,
+          "description": "Text input limited to 32 tokens"
+        },
+        "image": {
+          "max_count": 1,
+          "max_size_mb": 20,
+          "formats": [
+            "bmp",
+            "gif",
+            "jpeg",
+            "png"
+          ],
+          "description": "Single image up to 20MB"
+        },
+        "video": {
+          "max_duration_seconds": 120,
+          "formats": [
+            "avi",
+            "flv",
+            "mkv",
+            "mov",
+            "mp4",
+            "mpeg",
+            "mpg",
+            "webm",
+            "wmv"
+          ],
+          "description": "Video up to 120 seconds"
+        }
+      },
+      "max_embedding_dimensions": 1408,
+      "allowed_dimensions": {
+        "text": {
+          "default": 1408,
+          "options": [
+            128,
+            256,
+            512,
+            1408
+          ],
+          "description": "Supports lower-dimension embeddings. Default is 1408"
+        },
+        "image": {
+          "default": 1408,
+          "options": [
+            128,
+            256,
+            512,
+            1408
+          ],
+          "description": "Supports lower-dimension embeddings. Default is 1408"
+        },
+        "video": {
+          "default": 1408,
+          "options": [
+            1408
+          ],
+          "description": "Only 1408-dimensional embeddings supported for video"
+        }
+      },
+      "supported_formats": {
+        "image": [
+          "bmp",
+          "gif",
+          "jpeg",
+          "png"
+        ],
+        "video": [
+          "avi",
+          "flv",
+          "mkv",
+          "mov",
+          "mp4",
+          "mpeg",
+          "mpg",
+          "webm",
+          "wmv"
+        ]
+      },
+      "detailed_pricing": {
+        "text": {
+          "per_1k_characters": 0.0002,
+          "per_million_characters": 0.2,
+          "description": "Text embedding pricing"
+        },
+        "image": {
+          "per_image": 0.0001,
+          "per_1000_images": 0.1,
+          "per_million_images": 100.0,
+          "description": "Image embedding pricing"
+        },
+        "video": {
+          "plus": {
+            "per_second": 0.002,
+            "per_1000_seconds": 2.0,
+            "per_million_seconds": 2000.0,
+            "embeddings_per_minute": 15,
+            "description": "Up to 15 embeddings per minute of video"
+          },
+          "standard": {
+            "per_second": 0.001,
+            "per_1000_seconds": 1.0,
+            "per_million_seconds": 1000.0,
+            "embeddings_per_minute": 8,
+            "description": "Up to 8 embeddings per minute of video"
+          },
+          "essential": {
+            "per_second": 0.0005,
+            "per_1000_seconds": 0.5,
+            "per_million_seconds": 500.0,
+            "embeddings_per_minute": 4,
+            "description": "Up to 4 embeddings per minute of video"
+          }
+        }
+      },
+      "version_id": "001",
+      "open_source_category": "PROPRIETARY",
+      "launch_stage": "GA",
+      "supported_actions": null,
+      "publisher_model_template": "projects/{project}/locations/{location}/publishers/google/models/multimodalembedding@001"
+    }
+  },
+  {
     "id": "text-embedding-004",
     "name": "text-embedding-004",
     "provider": "vertexai",
